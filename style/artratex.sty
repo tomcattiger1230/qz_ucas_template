@@ -3,7 +3,7 @@
 %-                           Document Style                                -%
 %-                                                                         -%
 %---------------------------------------------------------------------------%
-%- Copyright (C) Huangrui Mo <huangrui.mo@gmail.com> 
+%- Copyright (C) Huangrui Mo <huangrui.mo@gmail.com>
 %- This is free software: you can redistribute it and/or modify it
 %- under the terms of the GNU General Public License as published by
 %- the Free Software Foundation, either version 3 of the License, or
@@ -262,7 +262,7 @@
     }
 }
 \newcommand{\intobmk}{\@ifstar{\intobmkstar}{\intobmknostar}}% swap starred and non-starred versions
-%\newcommand{\rmlbk}[1]{\begingroup\def\\{\relax\ifhmode\unskip\fi\space\ignorespaces}#1\endgroup}% remove line breaks 
+%\newcommand{\rmlbk}[1]{\begingroup\def\\{\relax\ifhmode\unskip\fi\space\ignorespaces}#1\endgroup}% remove line breaks
 %---------------------------------------------------------------------------%
 %->> Required packages
 %---------------------------------------------------------------------------%
@@ -472,12 +472,12 @@
 %-
 %-> Bibliography processor and package
 %-
-\def\artxbibref{Biblio/ref.bib}% bibliography reference file
-\def\artxbibtexnum{Biblio/gbt7714-numerical}% bibtex numbers bst
-\def\artxbibtexauy{Biblio/gbt7714-author-year}% bibtex authoryear bst
+\def\artxbibref{bib/ref.bib}% bibliography reference file
+\def\artxbibtexnum{bib/gbt7714-numerical}% bibtex numbers bst
+\def\artxbibtexauy{bib/gbt7714-author-year}% bibtex authoryear bst
 \def\artxbibtexalp{alpha}% bibtex alpha bst
-\def\artxbibernum{Biblio/gb7714-2015}% biber numbers bst
-\def\artxbiberauy{Biblio/gb7714-2015ay}% biber authoryear bst
+\def\artxbibernum{bib/gb7714-2015}% biber numbers bst
+\def\artxbiberauy{bib/gb7714-2015ay}% biber authoryear bst
 \def\artxbiberalp{alphabetic}% biber alpha bst
 %- Bibtex processor + natbib package
 \ifartx@bibtex%
@@ -803,9 +803,9 @@
     %- the reference point of the text box, [0,0]: top left; [0.5,0.5]: middle; [0,1]: bottom left
     %- [<hpos>,<vpos>] are fractions of the width and height of the page and specify
     %- the position point on page, [0,0]: top left; [0.5,0.5]: middle; [0,1]: bottom left
-    %- set unit of <blockwidth>, <hpos> arguments via module 
+    %- set unit of <blockwidth>, <hpos> arguments via module
     \setlength{\TPHorizModule}{\paperwidth}%
-    %- set unit of <vpos> argument via module 
+    %- set unit of <vpos> argument via module
     \setlength{\TPVertModule}{\paperheight}%
     %- \rule[raise]{width}{thickness}
     %- \rotatebox[origin=c]{angle}{text}

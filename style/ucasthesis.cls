@@ -3,7 +3,7 @@
 %-                           Document Class                                -%
 %-                                                                         -%
 %---------------------------------------------------------------------------%
-%- Copyright (C) Huangrui Mo <huangrui.mo@gmail.com> 
+%- Copyright (C) Huangrui Mo <huangrui.mo@gmail.com>
 %- This is free software: you can redistribute it and/or modify it
 %- under the terms of the GNU General Public License as published by
 %- the Free Software Foundation, either version 3 of the License, or
@@ -81,7 +81,7 @@
     \clist_clear:N \l_tmpb_clist
     \clist_map_inline:Nn \l_tmpa_clist
       {%
-        \clist_put_right:Nn \l_tmpb_clist 
+        \clist_put_right:Nn \l_tmpb_clist
           { \ulenhance[#1]{\ulextend{##1}} }
       }
     %\clist_show:N\l_tmpb_clist% show the content of comma list
@@ -120,7 +120,7 @@
 \setlength{\marginparsep}{10pt}% width of space between body text and margin notes
 %- part two -- vertical heights
 %- top height + textheight + bottom height = paperheight
-%- top height = 1.0in (fixed) + voffset + topmargin + headheight + headsep 
+%- top height = 1.0in (fixed) + voffset + topmargin + headheight + headsep
 \setlength{\textheight}{246.2mm}% set required text height first
 \setlength{\voffset}{0mm}% set vertical offset
 \setlength{\topmargin}{-10.4mm}% vertical margin above header
@@ -210,6 +210,8 @@
 \newcommand{\studydateto}[1]{\def\ucas@value@ch@studydateto{#1}}
 \def\ucas@value@ch@date{}
 \renewcommand{\date}[1]{\def\ucas@value@ch@date{#1}}
+\def\ucas@value@ch@studid{}
+\renewcommand{\studid}[1]{\def\ucas@value@ch@studid{#1}}
 %-
 %-> English item commands
 %-
@@ -379,7 +381,9 @@
         \vspace*{\stretch{2.5}}
 
         \ucas@value@ch@author
+        \vspace*{\stretch{2.5}}
 
+        \ucas@value@ch@studid
         \vspace*{\stretch{2.5}}
 
         \def\tabcolsep{1pt}
