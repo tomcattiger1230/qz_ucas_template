@@ -93,7 +93,7 @@
 %---------------------------------------------------------------------------%
 \AtEndOfPackage{% class cfg loaded after package to make preamble commands take effect
     \makeatletter
-    \InputIfFileExists{Style/ucasthesis.cfg}{}{}
+    \InputIfFileExists{style/ucasthesis.cfg}{}{}
     \makeatother
 }
 %---------------------------------------------------------------------------%
@@ -211,7 +211,11 @@
 \def\ucas@value@ch@date{}
 \renewcommand{\date}[1]{\def\ucas@value@ch@date{#1}}
 \def\ucas@value@ch@studid{}
-\renewcommand{\studid}[1]{\def\ucas@value@ch@studid{#1}}
+\newcommand{\studid}[1]{\def\ucas@value@ch@studid{#1}}
+\def\ucas@value@ch@workposition{}
+\newcommand{\workposition}[1]{\def\ucas@value@ch@workposition{#1}}
+\def\ucas@value@ch@proposaltitle{}
+\newcommand{\proposaltitle}[1]{\def\ucas@value@ch@proposaltitle{#1}}
 %-
 %-> English item commands
 %-
@@ -278,6 +282,15 @@
         \def\ucas@value@en@thesistype{\ucas@value@en@thesistype@pdc}%
         \def\maketitle{\maketitle@pdc}
         \def\MAKETITLE{\MAKETITLE@pdc}
+    }
+    \ucasifstreq{\ucas@value@en@degree}{Proposal}{%
+        \def\ucas@label@ch@thesis{\ucas@label@ch@thesis@prop}%
+        \def\ucas@label@ch@author{\ucas@label@ch@author@prop}%
+        \def\ucas@label@ch@major{\ucas@label@ch@major@prop}%
+        \def\ucas@label@ch@institute{\ucas@label@ch@institute@prop}%
+        \def\ucas@value@en@thesistype{\ucas@value@en@thesistype@prop}%
+        \def\maketitle{\maketitle@prop}
+        \def\MAKETITLE{\MAKETITLE@prop}
     }{%
         \ClassWarning{ucasthesis}{Invalid value of '\string\DEGREE', please check the spelling}%
     }}}}%
@@ -351,6 +364,71 @@
             hidelinks,% remove link color and border
         }
     \fi
+}
+\newcommand{\maketitle@prop}{%
+	\cleardoublepage
+	\thispagestyle{empty}
+	\begin{center}
+		\linespread{1.6}
+		\zihao{4}\bfseries
+
+		\hfill{} \ucasifstrbk{\ucas@value@ch@confidential}{}{\ucas@label@ch@confidential \ulenhance{\ulextend[50pt]{\hspace*{-\ulhshift}\zihao{5}\ucas@value@ch@confidential}}}
+
+		\vspace*{\stretch{4}}
+
+		{\ucas@value@ch@schoollogo}
+
+		\vspace*{\stretch{2}}
+
+		{\zihao{1}\bfseries\sffamily {\ucas@label@ch@thesis}}
+
+		\vspace*{\stretch{6}}
+
+
+		\def\tabcolsep{1pt}
+		\def\arraystretch{1.3}
+		\begin{tabular}{lclc}
+			\ucas@label@ch@proposaltitle& \ulenhance[1.2pt]{\ulextend{\ucas@value@ch@title}}  & &\\
+		\ucas@label@ch@author & \ulenhance{\ulextend[120pt]{\ucas@value@ch@author}}&  \ucas@label@ch@studid  &\ulenhance[1.2pt]{\ulextend[120pt]\ucas@value@ch@studid}\\
+			\ucas@label@ch@advisor & \ucaslntotab[1.2pt]{\ucas@value@ch@advisor}& &\\
+			\ucas@label@ch@degree & \ulenhance[1.2pt]{\ulextend{\ucas@value@ch@degreetype\ucas@value@ch@degree}}& &\\
+			\ucas@label@ch@major & \ulenhance[1.2pt]{\ulextend{\ucas@value@ch@major}}\\
+			\ucas@label@ch@institute & \ucaslntotab[1.2pt]{\ucas@value@ch@institute} & &\\
+		\end{tabular}
+
+		\vspace*{\stretch{4}}
+
+		{\ucas@value@ch@date}
+
+		\vspace*{\stretch{4}}
+	\end{center}
+	\clearpage
+	\if@twoside
+	\thispagestyle{empty}
+	\ifucas@versioninfo
+	\vspace*{\stretch{1}}
+	\begin{footnotesize}
+		\noindent
+		Draft Version (\today)
+	\end{footnotesize}
+	\fi
+	\cleardoublepage[empty]
+	\else
+	\ifucas@versioninfo
+	\thispagestyle{empty}
+	\vspace*{\stretch{1}}
+	\begin{footnotesize}
+		\noindent
+		Draft Version (\today)
+	\end{footnotesize}
+	\cleardoublepage[empty]
+	\fi
+	\fi
+	\ifucas@print%
+	\hypersetup{% set hyperlinks
+		hidelinks,% remove link color and border
+	}
+	\fi
 }
 \newcommand{\maketitle@pdc}{%
     \cleardoublepage
