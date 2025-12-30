@@ -94,9 +94,9 @@ Thesis.tex为主文档，其设计和规划了论文的整体框架，通过对�
 \end{equation}
 \[
     \begin{split}
-        \mathcal{L} \{f\}(s) &= \int _{0^{-}}^{\infty} f(t) e^{-st} \, \mathrm{d}t, \ 
+        \mathcal{L} \{f\}(s) &= \int _{0^{-}}^{\infty} f(t) e^{-st} \, \mathrm{d}t, \
         \mathscr{L} \{f\}(s) = \int _{0^{-}}^{\infty} f(t) e^{-st} \, \mathrm{d}t\\
-        \mathcal{F} {\bigl (} f(x+x_{0}) {\bigr )} &= \mathcal{F} {\bigl (} f(x) {\bigr )} e^{2\pi i\xi x_{0}}, \ 
+        \mathcal{F} {\bigl (} f(x+x_{0}) {\bigr )} &= \mathcal{F} {\bigl (} f(x) {\bigr )} e^{2\pi i\xi x_{0}}, \
         \mathscr{F} {\bigl (} f(x+x_{0}) {\bigr )} = \mathscr{F} {\bigl (} f(x) {\bigr )} e^{2\pi i\xi x_{0}}
     \end{split}
 \]
@@ -106,22 +106,22 @@ Thesis.tex为主文档，其设计和规划了论文的整体框架，通过对�
 \subsection{数学环境}
 
 \begin{axiom}
-   这是一个公理。 
+   这是一个公理。
 \end{axiom}
 \begin{theorem}
-   这是一个定理。 
+   这是一个定理。
 \end{theorem}
 \begin{lemma}
-   这是一个引理。 
+   这是一个引理。
 \end{lemma}
 \begin{corollary}
-   这是一个推论。 
+   这是一个推论。
 \end{corollary}
 \begin{assertion}
-   这是一个断言。 
+   这是一个断言。
 \end{assertion}
 \begin{proposition}
-   这是一个命题。 
+   这是一个命题。
 \end{proposition}
 \begin{proof}
     这是一个证明。
@@ -145,7 +145,7 @@ Thesis.tex为主文档，其设计和规划了论文的整体框架，通过对�
     \centering
     \footnotesize% fontsize
     \setlength{\tabcolsep}{4pt}% column separation
-    \renewcommand{\arraystretch}{1.2}%row space 
+    \renewcommand{\arraystretch}{1.2}%row space
     \begin{tabular}{lcccccccc}
         \hline
         行号 & \multicolumn{8}{c}{跨多列的标题}\\
@@ -168,7 +168,7 @@ Thesis.tex为主文档，其设计和规划了论文的整体框架，通过对�
 单图插入：假设插入名为\verb|c06h06|（后缀可以为.jpg、.png、.pdf，下同）的图片，其效果如图~\ref{fig:c06h06}。
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.40\textwidth]{c06h06}
+    \includegraphics[width=0.40\textwidth]{images/c06h06}
     \bicaption{Q判据等值面图，同时测试一下一个很长的标题，比如这真的是一个很长很长很长很长很长很长很长很长的标题。}{Isocontour of Q criteria, at the same time, this is to test a long title, for instance, this is a really very long very long very long very long very long title.}
     \label{fig:c06h06}
 \end{figure}
@@ -177,7 +177,7 @@ Thesis.tex为主文档，其设计和规划了论文的整体框架，通过对�
 \begin{figure}[!htbp]
     \centering
     %trim option's parameter order: left bottom right top
-    \includegraphics[trim = 60mm 80mm 60mm 60mm, clip, width=0.40\textwidth]{c06h06}
+    \includegraphics[trim = 60mm 80mm 60mm 60mm, clip, width=0.40\textwidth]{images/c06h06}
     \bicaption{激波圆柱作用。}{Shock-cylinder interaction.}
     \label{fig:c06h06_trim}
 \end{figure}
@@ -186,25 +186,25 @@ Thesis.tex为主文档，其设计和规划了论文的整体框架，通过对�
 \begin{figure}[!htbp]
     \centering
     \begin{subfigure}[b]{0.35\textwidth}
-      \includegraphics[width=\textwidth]{oaspl_a}
+      \includegraphics[width=\textwidth]{images/oaspl_a}
       \caption{}
       \label{fig:oaspl_a}
     \end{subfigure}%
     ~% add desired spacing
     \begin{subfigure}[b]{0.35\textwidth}
-      \includegraphics[width=\textwidth]{oaspl_b}
+      \includegraphics[width=\textwidth]{images/oaspl_b}
       \caption{}
       \label{fig:oaspl_b}
     \end{subfigure}
     \\% line break
     \begin{subfigure}[b]{0.35\textwidth}
-      \includegraphics[width=\textwidth]{oaspl_c}
+      \includegraphics[width=\textwidth]{images/oaspl_c}
       \caption{}
       \label{fig:oaspl_c}
     \end{subfigure}%
     ~% add desired spacing
     \begin{subfigure}[b]{0.35\textwidth}
-      \includegraphics[width=\textwidth]{oaspl_d}
+      \includegraphics[width=\textwidth]{images/oaspl_d}
       \caption{}
       \label{fig:oaspl_d}
     \end{subfigure}
@@ -240,7 +240,7 @@ Thesis.tex为主文档，其设计和规划了论文的整体框架，通过对�
 
 2）索引第一行 \verb|@article{lamport1986document,|中 \verb|lamport1986document| 即为此文献的label (\textbf{中文文献也必须使用英文label}，一般遵照：姓氏拼音+年份+标题第一字拼音的格式)，想要在论文中索引此文献，有两种索引类型：
 
-文本类型：\verb|\citet{lamport1986document}|。正如此处所示 \citet{lamport1986document}; 
+文本类型：\verb|\citet{lamport1986document}|。正如此处所示 \citet{lamport1986document};
 
 括号类型：\verb|\citep{lamport1986document}|。正如此处所示 \citep{lamport1986document}。
 
@@ -257,9 +257,9 @@ Thesis.tex为主文档，其设计和规划了论文的整体框架，通过对�
 
 如此，即完成了文献的索引，请查看下本文档的参考文献一章，看看是不是就是这么简单呢？是的，就是这么简单！
 
-不同文献样式和引用样式，如著者-出版年制（authoryear）、顺序编码制（numbers）、上标顺序编码制（super）可在Thesis.tex中对artratex.sty调用实现，详见 \href{https://github.com/mohuangrui/ucasthesis/wiki}{ucasthesis 知识小站之文献样式}
+不同文献样式和引用样式，如著者-出版年制（authoryear）、顺序编码制（numbers）、上标顺序编码制（super）可在Thesis.tex中对artratex.sty调用实现，详见 \href{https://github.com/mohuangrui/ucasthesis/wiki}{ucasthesis 知识小站之文献样式}\cite{niu2013zonghe}
 
-%若在上标顺序编码制（super）模式下，希望在特定位置将上标改为嵌入式标，可使用 \citetns{niu2013zonghe,stamerjohanns2009mathml} 和 \citepns{niu2013zonghe,stamerjohanns2009mathml}。
+若在上标顺序编码制（super）模式下，希望在特定位置将上标改为嵌入式标，可使用 \citetns{niu2013zonghe,stamerjohanns2009mathml} 和 \citepns{niu2013zonghe,stamerjohanns2009mathml}。
 
 参考文献索引的更多知识，请见 \href{https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management}{WiKibook Bibliography}。\nocite{*}% 使文献列表显示所有参考文献（包括未引用文献）
 
@@ -269,11 +269,11 @@ Thesis.tex为主文档，其设计和规划了论文的整体框架，通过对�
     \item 模板每次发布前，都已在Windows，Linux，MacOS系统上测试通过。下载模板后，若编译出现错误，则请见 \href{https://github.com/mohuangrui/ucasthesis/wiki}{ucasthesis知识小站} 的 \href{https://github.com/mohuangrui/ucasthesis/wiki/%E7%BC%96%E8%AF%91%E6%8C%87%E5%8D%97}{编译指南}。
 
     \item 模板文档的编码为UTF-8编码。所有文件都必须采用UTF-8编码，否则编译后生成的文档将出现乱码文本。若出现文本编辑器无法打开文档或打开文档乱码的问题，请检查编辑器对UTF-8编码的支持。如果使用WinEdt作为文本编辑器（\textbf{不推荐使用}），应在其Options -> Preferences -> wrapping选项卡下将两种Wrapping Modes中的内容：
-        
+
         TeX;HTML;ANSI;ASCII|DTX...
-        
+
         修改为：TeX;\textbf{UTF-8|ACP;}HTML;ANSI;ASCII|DTX...
-        
+
         同时，取消Options -> Preferences -> Unicode中的Enable ANSI Format。
 
     \item 推荐选择xelatex或lualatex编译引擎编译中文文档。编译脚本的默认设定为xelatex编译引擎。你也可以选择不使用脚本编译，如直接使用 \LaTeX{}文本编辑器编译。注：\LaTeX{}文本编辑器编译的默认设定为pdflatex编译引擎，若选择xelatex或lualatex编译引擎，请进入下拉菜单选择。为正确生成引用链接和参考文献，需要进行\textbf{全编译}。
@@ -287,7 +287,7 @@ Thesis.tex为主文档，其设计和规划了论文的整体框架，通过对�
             \item 使用 Auto Build 编译带有未生成引用链接的源文件，可以仅使用 xelatex 编译带有已经正确生成引用链接的源文件。
             \item 编译完成，“查看(View)” PDF，在PDF中 “ctrl+click” 可链接到相对应的源文件。
         \end{enumerate}
-    
+
     \item 模版的设计可能地考虑了适应性。致谢等所有条目都是通过最为通用的
 
         \verb+\chapter{item name}+  and \verb+\section*{item name}+

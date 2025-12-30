@@ -1,13 +1,16 @@
 % 这是硕士研究生作为毕业论文的模板
 
-\documentclass[twoside]{style/ucasthesis}
+\documentclass[twoside]{style/ucasthesis} %simhei.ttf
 \usepackage[]{hyperref} % due to new version of texlive
 \usepackage{hyperxmp}% due to new version of texlive
-\usepackage[authoryear, list]{style/artratex}
+% \usepackage[authoryear, list]{style/artratex}
+\usepackage[numbers, list]{style/artratex}
 \usepackage{style/artracom}
 
+% 请在Frontinfo中修改论文的封面信息（中、英文）
 \input{contents/Frontinfo}
 \begin{document}
+% frontmatter
 \frontmatter% initialize the environment
 \input{contents/Frontmatter}% title page, abstract
 {% content list region
