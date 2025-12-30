@@ -4,7 +4,7 @@ Style files are stored in _style_ folder.
 
 ## Thanks
 
-Huangrui Mo
+这个项目要感谢 Huangrui Mo 的下列资源
 
 https://github.com/mohuangrui/ucasthesis
 

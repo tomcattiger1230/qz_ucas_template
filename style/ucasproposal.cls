@@ -3,7 +3,7 @@
 %-                           Document Class                                -%
 %-                                                                         -%
 %---------------------------------------------------------------------------%
-%- Copyright (C) Huangrui Mo <huangrui.mo@gmail.com> 
+%- Copyright (C) Huangrui Mo <huangrui.mo@gmail.com>
 %- This is free software: you can redistribute it and/or modify it
 %- under the terms of the GNU General Public License as published by
 %- the Free Software Foundation, either version 3 of the License, or
@@ -78,7 +78,7 @@
     \clist_clear:N \l_tmpb_clist
     \clist_map_inline:Nn \l_tmpa_clist
       {%
-        \clist_put_right:Nn \l_tmpb_clist 
+        \clist_put_right:Nn \l_tmpb_clist
           { \ulenhance[#1]{\ulextend{##1}} }
       }
     %\clist_show:N\l_tmpb_clist% show the content of comma list
@@ -90,7 +90,7 @@
 %---------------------------------------------------------------------------%
 \AtEndOfPackage{% class cfg loaded after package to make preamble commands take effect
     \makeatletter
-    \InputIfFileExists{Style/ucasproposal.cfg}{}{}
+    \InputIfFileExists{style/ucasproposal.cfg}{}{}
     \makeatother
 }
 %---------------------------------------------------------------------------%
@@ -117,7 +117,7 @@
 \setlength{\marginparsep}{10pt}% width of space between body text and margin notes
 %- part two -- vertical heights
 %- top height + textheight + bottom height = paperheight
-%- top height = 1.0in (fixed) + voffset + topmargin + headheight + headsep 
+%- top height = 1.0in (fixed) + voffset + topmargin + headheight + headsep
 \setlength{\textheight}{246.2mm}% set required text height first
 \setlength{\voffset}{0mm}% set vertical offset
 \setlength{\topmargin}{-10.4mm}% vertical margin above header
@@ -157,7 +157,7 @@
     \hbox to #1{\hfill\hspace*{\ulhshift}#2\hfill}}
 %- special cell
 %- \specialcell[<align2>]{align1}{text1\\text2};
-%- <align1>: t,c,b; <align2> l,c,r; @{} suppress spaces before and after text 
+%- <align1>: t,c,b; <align2> l,c,r; @{} suppress spaces before and after text
 \newcommand{\specialcell}[3][c]{%
     \begin{tabular}[#2]{@{}#1@{}}#3\end{tabular}}
 %---------------------------------------------------------------------------%
@@ -194,6 +194,8 @@
 \newcommand{\institute}[1]{\def\ucas@value@ch@institute{#1}}
 \def\ucas@value@ch@date{}
 \newcommand{\chinesedate}[1]{\def\ucas@value@ch@date{#1}}
+\def\ucas@value@ch@school{}
+\newcommand{\school}[1]{\def\ucas@value@ch@school{#1}}
 %-
 %-> English item commands
 %-
@@ -236,6 +238,71 @@
       \vspace*{50pt}
 
       {\ucas@label@ch@mark}
+    \end{center}
+    \clearpage
+    \if@twoside
+        \thispagestyle{empty}
+        \ifucas@versioninfo
+            \vspace*{\stretch{1}}
+            \begin{footnotesize}
+                \noindent
+                Draft Version (\today)
+            \end{footnotesize}
+        \fi
+        \cleardoublepage[empty]
+    \else
+        \ifucas@versioninfo
+            \thispagestyle{empty}
+            \vspace*{\stretch{1}}
+            \begin{footnotesize}
+                \noindent
+                Draft Version (\today)
+            \end{footnotesize}
+            \cleardoublepage[empty]
+        \fi
+    \fi
+    \ifucas@print%
+        \hypersetup{% set hyperlinks
+            hidelinks,% remove link color and border
+        }
+    \fi
+}
+
+\newcommand{\maketitlefujian}{% fujian insitute without logo
+    \cleardoublepage
+    \thispagestyle{empty}
+    \begin{center}
+        \linespread{1.3}
+        \zihao{-3}\bfseries
+        \vspace*{10pt}
+
+        % {\ucas@value@ch@schoollogo}
+
+        % \vspace*{20pt}
+        {\zihao{1}\bfseries\sffamily \ucas@label@ch@thesisfj}\\
+		\vspace*{20pt}
+        {\zihao{1}\bfseries\sffamily \ucas@label@ch@thesis}
+
+        \vspace*{195pt}
+
+        \def\tabcolsep{1pt}
+        \def\arraystretch{1.2}
+        \begin{tabular}{lc}
+            %\ucas@label@ch@title & \ulenhance{\ulextend{\shortstack{\ucas@value@ch@title}}}\\
+            %\ucas@label@ch@title & \ulenhance{\ulextend{\specialcell[c]{b}{\ucas@value@ch@title}}}\\
+            \ucas@label@ch@title & \ucaslntotab{\ucas@value@ch@title}\\
+            \ucas@label@ch@author & \ulenhance{\ulextend[151pt]{\hspace*{-\ulhshift}\ucas@value@ch@author}}\ucas@label@ch@authorid\ulenhance{\ulextend[170pt]{\hspace*{-\ulhshift}\ucas@value@ch@authorid}}\\
+            \ucas@label@ch@advisor & \ulenhance{\ulextend[151pt]{\hspace*{-\ulhshift}\ucas@value@ch@advisor}}\ucas@label@ch@advisortitle\ulenhance{\ulextend[170pt]{\hspace*{-\ulhshift}\ucas@value@ch@advisortitle}}\\
+            \ucas@label@ch@degree & \ulenhance{\ulextend{\ucas@value@ch@degreetype\ucas@value@ch@degree}}\\
+            \ucas@label@ch@major & \ulenhance{\ulextend{\ucas@value@ch@major}}\\
+            \ucas@label@ch@field & \ulenhance{\ulextend{\ucas@value@ch@field}}\\
+            \ucas@label@ch@school & \ucaslntotab{\ucas@value@ch@school}\\
+            \ucas@label@ch@date & \ulenhance{\ulextend{\ucas@value@ch@date}}
+      \end{tabular}
+
+      \vspace*{50pt}
+
+      {\ucas@label@ch@markfj}
     \end{center}
     \clearpage
     \if@twoside

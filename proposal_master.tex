@@ -1,25 +1,27 @@
 % 这是硕士研究生作为开题报告的模板
 
-\documentclass[twoside]{style/ucasproposal}
-\usepackage[]{hyperref} % due to new version of texlive
-\usepackage{hyperxmp}% due to new version of texlive
-\usepackage[super, list]{style/artratex}
+\documentclass{style/ucasproposal}
+%\usepackage[]{hyperref} % due to new version of texlive
+%\usepackage{hyperxmp}% due to new version of texlive
+\usepackage[super, list, xhf]{style/artratex}
 \usepackage{style/artracom}
 
-\input{contents/Frontinfo_masterpoposal}
+
 \begin{document}
+\input{contents/frontinfo_masterpoposal}
 \pagenumbering{roman}
-\frontmatter% initialize the environment
-\input{contents/Frontmatter_masterproposal}% title page, abstract
+
+\input{contents/frontmatter_masterproposal}% title page, abstract
 \clearpage
 \pagenumbering{arabic}% restart page numbers with arabic style
 \input{contents/mainmatter_ms_proposal}% main content
 %-
 %-> Backmatter: bibliography, glossary, index
 %-
+%-
 \artxifstreq{\artxbib}{bibtex}{% enable bibtex
-    \bibliography{bib/ref}% bibliography
+	\bibliography{bib/ref}% bibliography
 }{%
-    \printbibliography% bibliography
+	\printbibliography% bibliography
 }
 \end{document}
