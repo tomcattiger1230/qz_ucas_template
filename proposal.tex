@@ -8,13 +8,13 @@
 
 
 \begin{document}
-\input{contents/frontinfo_proposal}
+\input{contents/frontinfo_proposal} % 中文的封面信息，请填好自己的个人信息
 \pagenumbering{roman}
 
-\input{contents/frontmatter_proposal}% title page, abstract
+\input{contents/frontmatter_proposal}% 不用修改本文件
 \clearpage
 \pagenumbering{arabic}% restart page numbers with arabic style
-\input{contents/mainmatter_proposal}% main content
+\input{contents/mainmatter_proposal}% 主要内容，在不复杂的情况下，不需要像thesis那样使用多个tex文件
 %-
 %-> Backmatter: bibliography, glossary, index
 %-
@@ -22,6 +22,6 @@
 \artxifstreq{\artxbib}{bibtex}{% enable bibtex
 	\bibliography{bib/ref}% bibliography
 }{%
-	\printbibliography% bibliography
+	\printbibliography% bibliograph/y
 }
 \end{document}
