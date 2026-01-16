@@ -7,12 +7,12 @@
 \usepackage[super, list]{style/artratex}
 \usepackage{style/artracom}
 
-% 请在Frontinfo中修改论文的封面信息（中、英文）
+% 请在Frontinfo中修改论文的封面信息（中、英文），注意英文部分的学位信息必须准确
 \input{contents/frontinfo}
 \begin{document}
 % frontmatter
 \frontmatter% initialize the environment
-\input{contents/frontmatter}% title page, abstract
+\input{contents/frontmatter}% 中英文摘要和关键词部分在此文件修改
 {% content list region
 \linespread{1.2}% local line space
 \intobmk*{\cleardoublepage}{\contentsname}% add link to bookmark
@@ -22,10 +22,10 @@
 \intobmk*{\cleardoublepage}{\listtablename}% add link to bookmark
 \listoftables% table catalog
 }
-\input{contents/prematter}% symbol list, preface content
+\input{contents/prematter}% 符号，缩写，算子等声明
 
 %-
-%-> 主要部分
+%-> 正文部分
 %-
 \mainmatter% initialize the environment
 \input{contents/mainmatter}% main content
@@ -35,7 +35,7 @@
 %-
 \cleardoublepage%
 \appendix% initialize the environment
-\input{contents/appendix}% appendix content
+\input{contents/appendix}% 附录，内容根据需要填写，可以删去
 %-
 %-> Backmatter: bibliography, glossary, index
 %-
@@ -46,5 +46,5 @@
 }{%
     \printbibliography% bibliography
 }
-\input{contents/backmatter}% other information
+\input{contents/backmatter}% 致谢；研究成果声明
 \end{document}
