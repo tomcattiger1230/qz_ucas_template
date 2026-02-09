@@ -212,9 +212,12 @@ Thesis.tex为主文档，其设计和规划了论文的整体框架，通过对�
     \label{fig:oaspl}
 \end{figure}
 
-另外，对于个别图片需要引用参考文献，为不影响文献的排序，需要使用额外的标记方式例如
-\text{\caption[AAA]{AAA~\protect\cite{ACite}]}}
-\text{\bicaption[AAA]{AAA~\protect\cite{ACite}]}[BBB]{BBB~\protect\cite{BCite}]}}
+另外，对于个别图片需要引用参考文献，为不影响文献的排序，需要使用额外的标记方式，如下所示：
+\begin{enumerate}
+    \item \verb|\caption[AAA]{AAA~\protect\cite{ACite}}|
+    \item \verb|\bicaption[AAA]{AAA~\protect\cite{ACite}}[BBB]{BBB~\protect\cite{BCite}}|
+\end{enumerate}
+
 
 
 \subsection{算法}
