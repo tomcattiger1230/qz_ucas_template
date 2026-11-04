@@ -3,11 +3,11 @@
 %  版式照福州大学开题报告 Word 模板（FZU Body / FZU H1~H3 样式）
 %
 %  需要填写的只有三处：
-%    1) contents/frontinfo_proposal.tex   封面信息（题目/姓名/学号/导师/专业/单位）
-%    2) contents/mainmatter_proposal.tex  正文五章（骨架已给，注释里是每节的填写要点）
-%    3) bib/ref.bib                       参考文献条目
+%    1) contents/frontinfo_fzu.tex   封面信息（题目/姓名/学号/导师/专业/单位）
+%    2) contents/mainmatter_fzu.tex  正文五章（骨架已给，注释里是每节的填写要点）
+%    3) bib/ref.bib                  参考文献条目（与主模板共用文献池）
 %
-%  编译：xelatex proposal.tex && bibtex proposal && xelatex proposal.tex && xelatex proposal.tex
+%  编译：xelatex proposal_fzu.tex && bibtex proposal_fzu && xelatex proposal_fzu.tex && xelatex proposal_fzu.tex
 %=============================================================================%
 \documentclass{style/ucasproposal}
 \usepackage[super, list, xhf]{style/artratex}% xhf：关闭模板自带的页眉页脚，改用文末自定义的 fzu 样式
@@ -97,15 +97,15 @@
 \begin{document}
 \pagestyle{fzu}% 全文统一：无页眉，页脚居中页码
 \linespread{1.389}\selectfont% 12pt 字号 × 1.2 × 1.389 ≈ 20 磅固定行距（FZU Body: line=400 exact）
-% \input{contents/cover_table}% 福大「表一」封面：默认关闭；需要交表一时去掉本行行首的 %
-\input{contents/frontinfo_proposal}% 封面信息（表格封面关闭时，这里只提供变量，不排版）
+% \input{contents/cover_table_fzu}% 福大「表一」封面：默认关闭；需要交表一时去掉本行行首的 %
+\input{contents/frontinfo_fzu}% 封面信息（表格封面关闭时，这里只提供变量，不排版）
 \pagenumbering{roman}
 \pagestyle{empty}% 目录页按参考稿不显示页码
-\input{contents/frontmatter_proposal}% 目录
+\input{contents/frontmatter_fzu}% 目录
 \clearpage
 \pagenumbering{arabic}
 \pagestyle{fzu}
-\input{contents/mainmatter_proposal}% 正文
+\input{contents/mainmatter_fzu}% 正文
 
 \clearpage
 \renewcommand{\refname}{五、参考文献}% 参考文献作为第五条，标题不带自动编号

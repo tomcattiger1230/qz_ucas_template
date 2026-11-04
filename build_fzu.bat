@@ -1,7 +1,7 @@
 @echo off
 rem ============================================================
-rem  Build proposal.tex with XeLaTeX + BibTeX (4 passes total)
-rem  Usage: double-click this file, or run "build.bat" in cmd
+rem  Build proposal_fzu.tex with XeLaTeX + BibTeX (4 passes total)
+rem  Usage: double-click this file, or run "build_fzu.bat" in cmd
 rem  Note : comments here are ASCII on purpose (cmd reads GBK)
 rem ============================================================
 cd /d "%~dp0"
@@ -33,24 +33,24 @@ set BIBINPUTS=.//;
 set BSTINPUTS=.//;
 
 echo [1/4] xelatex pass 1 ...
-xelatex -interaction=nonstopmode proposal.tex > build_1.log 2>&1
+xelatex -interaction=nonstopmode proposal_fzu.tex > build_fzu_1.log 2>&1
 
 echo [2/4] bibtex ...
-bibtex proposal > build_bib.log 2>&1
+bibtex proposal_fzu > build_fzu_bib.log 2>&1
 
 echo [3/4] xelatex pass 2 ...
-xelatex -interaction=nonstopmode proposal.tex > build_2.log 2>&1
+xelatex -interaction=nonstopmode proposal_fzu.tex > build_fzu_2.log 2>&1
 
 echo [4/4] xelatex pass 3 ...
-xelatex -interaction=nonstopmode proposal.tex > build_3.log 2>&1
+xelatex -interaction=nonstopmode proposal_fzu.tex > build_fzu_3.log 2>&1
 
 echo.
-if exist proposal.pdf (
+if exist proposal_fzu.pdf (
   echo Build finished.
-  echo PDF:  %~dp0proposal.pdf
-  echo Logs: build_1.log / build_bib.log / build_3.log
+  echo PDF:  %~dp0proposal_fzu.pdf
+  echo Logs: build_fzu_1.log / build_fzu_bib.log / build_fzu_3.log
 ) else (
-  echo Build FAILED. Open build_3.log and search for lines starting with "!".
+  echo Build FAILED. Open build_fzu_3.log and search for lines starting with "!".
 )
 echo.
 pause
