@@ -1,0 +1,57 @@
+%---------------------------------------------------------------------------%
+%  条目写法示例（本文件不参与编译：\bibliography 只读 bib/ref.bib）
+%  用法：整条复制到 bib/ref.bib，把字段换成自己的，再在正文里 \cite{key}。
+%        中英文文献混排时，中文条目建议加 language = {zh}，标点会按国标处理。
+%---------------------------------------------------------------------------%
+
+% 1. 期刊论文
+@article{example-journal,
+  author   = {张三 and 李四 and 王五},
+  title    = {面向×××的×××方法研究},
+  journal  = {自动化学报},
+  year     = {2024},
+  volume   = {50},
+  number   = {3},
+  pages    = {1--12},
+  language = {zh},
+}
+
+% 2. 会议论文（英文）
+@inproceedings{example-conference,
+  author    = {Last, First and Other, Second},
+  title     = {A Paper Title about Something},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year      = {2023},
+  pages     = {1234--1243},
+  address   = {Vancouver, Canada},
+}
+
+% 3. 专著
+@book{example-book,
+  author    = {李四},
+  title     = {×××原理与方法},
+  publisher = {科学出版社},
+  address   = {北京},
+  year      = {2020},
+  edition   = {2},
+  language  = {zh},
+}
+
+% 4. 学位论文
+@phdthesis{example-thesis,
+  author   = {王五},
+  title    = {×××关键技术研究},
+  school   = {××大学},
+  address  = {××},
+  year     = {2022},
+  language = {zh},
+}
+
+% 5. 电子资源 / 预印本（online 或 techreport 均可）
+@techreport{example-report,
+  author      = {Zhang, San},
+  title       = {A Technical Report on Something},
+  institution = {Some Institute},
+  year        = {2023},
+  number      = {TR-2023-01},
+}

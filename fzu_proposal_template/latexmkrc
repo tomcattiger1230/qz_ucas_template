@@ -1,0 +1,6 @@
+# latexmk 配置：在本目录执行 `latexmk` 即可一键编译（自动跑 bibtex）
+$pdf_mode = 5;                       # 5 = xelatex
+$xelatex = 'xelatex -interaction=nonstopmode %O %S';
+@default_files = ('proposal.tex');
+$bibtex_use = 2;                     # 自动运行 bibtex，并清理 aux 残留
+$out_dir = '.';

@@ -10,3 +10,7 @@
 *.blg
 .DS_Store
 .vscode
+
+# 福大开题报告模板：保留随包 PDF（校徽、示例输出），编译产物 proposal.pdf 仍被忽略
+!fzu_proposal_template/images/ucas_logo.pdf
+!fzu_proposal_template/示例输出-骨架编译结果.pdf

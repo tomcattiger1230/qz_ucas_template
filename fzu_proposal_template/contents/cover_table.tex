@@ -1,0 +1,50 @@
+%=============================================================================%
+%  福大「表一」封面（福州大学专业学位研究生论文开题报告）
+%  版式照福大开题报告 Word 模板：
+%    A4、六列竖线表格、标签宋体四号、内容宋体小四、意见栏首行缩进两字
+%  列宽合计 15.60cm + 6×2\tabcolsep(3pt) + 竖线 ≈ 17.0cm（正好版心）
+%
+%  用法：在 proposal.tex 里把 \input{contents/cover_table} 那一行的行首 % 去掉，
+%        然后把下面所有 ××× 换成自己的信息（这里的文字是直接排版的，不读变量）。
+%  提示：意见栏建议打印后手写签字；如需电子版，把意见写在 \hspace{2em} 后面即可。
+%=============================================================================%
+\begin{titlepage}
+\thispagestyle{empty}%
+\begin{flushright}
+{\linespread{1.0}\zihao{5}表\quad 一}\par
+\end{flushright}
+\vspace{-1.5em}
+\begin{center}
+{\linespread{1.0}\zihao{2}\heiti 福州大学专业学位研究生论文开题报告}\par
+\end{center}
+\vspace{-0.2em}
+
+\begingroup
+\setlength{\tabcolsep}{3pt}%
+\renewcommand{\arraystretch}{1.0}%
+\zihao{5}%
+\noindent
+\begin{tabular}{|>{\centering\arraybackslash}p{2.55cm}|>{\centering\arraybackslash}p{2.15cm}|>{\centering\arraybackslash}p{2.35cm}|>{\centering\arraybackslash}p{2.95cm}|>{\centering\arraybackslash}p{2.35cm}|>{\centering\arraybackslash}p{3.25cm}|}
+\hline
+{\linespread{1.0}\zihao{4}论文题目} & \multicolumn{5}{l|}{{\linespread{1.0}\zihao{-4}××××××××××××}} \\ \hline
+{\linespread{1.0}\zihao{4}姓\hspace{1.1em}名} & {\linespread{1.0}\zihao{-4}×××} & {\linespread{1.0}\zihao{4}学\hspace{1.1em}号} & {\linespread{1.0}\zihao{-4}××××××××××} & {\linespread{1.0}\zihao{4}性\hspace{1.1em}别} & {\linespread{1.0}\zihao{-4}××} \\ \hline
+{\linespread{1.0}\zihao{4}导\hspace{1.1em}师} & {\linespread{1.0}\zihao{-4}×××} & {\linespread{1.0}\zihao{4}学科专业} & {\linespread{1.0}\zihao{-4}××××××××} & {\linespread{1.0}\zihao{4}研究方向} & {\linespread{1.0}\zihao{-4}××××××××} \\ \hline
+{\linespread{1.0}\zihao{4}学\hspace{1.1em}院} & \multicolumn{2}{c|}{{\linespread{1.0}\zihao{-4}×××××学院}} & {\linespread{1.0}\zihao{4}开题报告会时间、地点} & \multicolumn{2}{p{5.55cm}|}{\centering\zihao{-4}××××.××.××\quad ××××××××××××} \\ \hline
+\parbox{\linewidth}{\linespread{1.0}\centering\zihao{4}导师审核} & \multicolumn{5}{p{13.9cm}|}{\linespread{1.0}\fontsize{11pt}{14.6pt}\selectfont%
+\vspace{0.3em}%
+\par\vspace{4.2em}% 留空给手写意见
+\hspace{9em}导师签名：\par
+\vspace{0.6em}\hspace{11em}年\qquad 月\qquad 日\par\vspace{0.3em}} \\ \hline
+\multirow{2}{*}{\parbox{\linewidth}{\linespread{1.0}\centering\zihao{4}审核小组\\意见与评定成绩}} & \multicolumn{5}{p{13.9cm}|}{\linespread{1.0}\fontsize{11pt}{14.6pt}\selectfont%
+\vspace{0.3em}%
+\par\vspace{5.6em}% 留空给手写意见
+\hspace{8em}审核小组成员签名：\par
+\vspace{0.6em}\hspace{11em}年\qquad 月\qquad 日\par\vspace{0.3em}} \\ \cline{2-6}
+ & \parbox{\linewidth}{\linespread{1.0}\centering\zihao{5}评定成绩\\（在相应等级打$\surd$）} & {\linespread{1.0}\zihao{5}优秀（\hspace{0.8em}）} & {\linespread{1.0}\zihao{5}良好（\hspace{0.8em}）} & {\linespread{1.0}\zihao{5}一般（\hspace{0.8em}）} & {\linespread{1.0}\zihao{5}较差（\hspace{0.8em}）} \\ \hline
+\parbox{\linewidth}{\linespread{1.0}\centering\zihao{4}学位点\\意见} & \multicolumn{5}{p{13.9cm}|}{\linespread{1.0}\fontsize{11pt}{14.6pt}\selectfont%
+\vspace{2.2em}%
+\hspace{9em}学位点负责人签名：\par
+\vspace{0.6em}\hspace{11em}年\qquad 月\qquad 日\par\vspace{0.3em}} \\ \hline
+\end{tabular}
+\endgroup
+\end{titlepage}

@@ -1,0 +1,114 @@
+%=============================================================================%
+%  福州大学 专业学位研究生论文开题报告 —— LaTeX 空白模板
+%  版式照福州大学开题报告 Word 模板（FZU Body / FZU H1~H3 样式）
+%
+%  需要填写的只有三处：
+%    1) contents/frontinfo_proposal.tex   封面信息（题目/姓名/学号/导师/专业/单位）
+%    2) contents/mainmatter_proposal.tex  正文五章（骨架已给，注释里是每节的填写要点）
+%    3) bib/ref.bib                       参考文献条目
+%
+%  编译：xelatex proposal.tex && bibtex proposal && xelatex proposal.tex && xelatex proposal.tex
+%=============================================================================%
+\documentclass{style/ucasproposal}
+\usepackage[super, list, xhf]{style/artratex}% xhf：关闭模板自带的页眉页脚，改用文末自定义的 fzu 样式
+\usepackage{style/artracom}
+\usepackage{float}% 支持 [H] 强制图片位置
+\usepackage{multirow}% 封面表一的合并单元格
+\usepackage{tabularx}% 封面表一按版心宽度自适应
+%---------------------------------------------------------------------------%
+% 版面与字体：按福大开题报告模板（表一 .docx 内嵌的 FZU Body / FZU H1~H3 样式）
+%   页面   A4，上下 22mm、左右 20mm（pgMar 1247 / 1134 twips）
+%   正文   宋体 + Times New Roman，小四 12pt，固定行距 20 磅，首行缩进 2 字符
+%   标题1  黑体四号 14pt 加粗，段前段后各 12 磅，编号后留 1.5 字间隔
+%   标题2  黑体小四 12pt，编号后留间隔
+%   标题3  黑体小四 12pt，左对齐，段前 12 磅、段后 6 磅
+%   图号   按章编号（图 1-1）；公式连续编号（1）
+%   页脚   宋体小五 9pt，居中「第 X 页 共 Y 页」，无页眉
+%---------------------------------------------------------------------------%
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\geometry{paper=a4paper,left=20mm,right=20mm,top=22mm,bottom=22mm,
+          headheight=15mm,headsep=7mm,footskip=17.5mm}
+% 字体：Windows 用宋体/黑体/仿宋；macOS 自动换宋体-简/楷体；都没有时用 Fandol 兜底，
+%       保证在任何一台装了 TeX 发行版的机器上都不会因缺字体而报错。
+\IfFontExistsTF{Times New Roman}{%
+  \setmainfont{Times New Roman}%
+}{%
+  \setmainfont{TeX Gyre Termes}%
+}
+\IfFontExistsTF{SimSun}{% Windows
+  \setCJKmainfont{SimSun}[AutoFakeBold=2.5,ItalicFont=KaiTi]
+  \setCJKsansfont{SimHei}[AutoFakeBold=2.5]
+  \setCJKmonofont{FangSong}
+}{\IfFontExistsTF{Songti SC}{% macOS
+  \setCJKmainfont{Songti SC}[BoldFont=* Bold,ItalicFont=Kaiti SC]
+  \setCJKsansfont{Heiti SC}[BoldFont=* Medium]
+  \setCJKmonofont{STFangsong}
+}{% Linux / Overleaf
+  \IfFileExists{FandolSong-Regular.otf}{% Fandol 随 TeX Live 发行，无需装字体
+    \setCJKmainfont{FandolSong-Regular}[Extension=.otf,BoldFont=FandolSong-Bold,ItalicFont=FandolKai-Regular]
+    \setCJKsansfont{FandolHei-Regular}[Extension=.otf,BoldFont=FandolHei-Bold]
+    \setCJKmonofont{FandolFang-Regular}[Extension=.otf]
+  }{% 最后兜底：Linux 上常见的 Noto CJK
+    \setCJKmainfont{Noto Serif CJK SC}[BoldFont=* Bold]
+    \setCJKsansfont{Noto Sans CJK SC}[BoldFont=* Bold]
+    \setCJKmonofont{Noto Serif CJK SC}
+  }
+}}
+\setlength{\parindent}{24pt}% 首行缩进 2 字符（480 twips）
+\setlength{\parskip}{6pt plus 0pt minus 0pt}% 段后 6 磅（after=120 twips）
+\ctexset{
+  section = {
+    format = \raggedright\linespread{1.0}\fontsize{14pt}{20pt}\selectfont\heiti\bfseries,
+    number = {\chinese{section}、},
+    aftername = {\hspace{1.5em}},
+    beforeskip = {12pt},
+    afterskip = {12pt},
+  },
+  subsection = {
+    format = \raggedright\linespread{1.0}\fontsize{12pt}{20pt}\selectfont\heiti,
+    numberformat = \rmfamily,
+    aftername = {\hspace{1em}},
+    beforeskip = {12pt},
+    afterskip = {12pt},
+  },
+  subsubsection = {
+    format = \raggedright\linespread{1.0}\fontsize{12pt}{20pt}\selectfont\heiti,
+    numberformat = \rmfamily,
+    aftername = {\hspace{1em}},
+    beforeskip = {12pt},
+    afterskip = {6pt},
+  },
+}
+\fancypagestyle{fzu}{%
+  \fancyhf{}
+  \fancyhead{}%
+  \fancyfoot[C]{\fontsize{9pt}{11pt}\selectfont 第~\thepage~页\quad 共~\pageref{LastPage}~页}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+\AtEndDocument{\label{LastPage}}
+\newcommand{\proposalstep}[1]{%
+  \par\textbf{#1}\par\nopagebreak[4]}
+\counterwithin{figure}{section}% 图按章编号
+\renewcommand{\thefigure}{\thesection-\arabic{figure}}% 形如「图 1-1」
+\setcounter{tocdepth}{3}% 目录显示到三级标题
+
+\begin{document}
+\pagestyle{fzu}% 全文统一：无页眉，页脚居中页码
+\linespread{1.389}\selectfont% 12pt 字号 × 1.2 × 1.389 ≈ 20 磅固定行距（FZU Body: line=400 exact）
+% \input{contents/cover_table}% 福大「表一」封面：默认关闭；需要交表一时去掉本行行首的 %
+\input{contents/frontinfo_proposal}% 封面信息（表格封面关闭时，这里只提供变量，不排版）
+\pagenumbering{roman}
+\pagestyle{empty}% 目录页按参考稿不显示页码
+\input{contents/frontmatter_proposal}% 目录
+\clearpage
+\pagenumbering{arabic}
+\pagestyle{fzu}
+\input{contents/mainmatter_proposal}% 正文
+
+\clearpage
+\renewcommand{\refname}{五、参考文献}% 参考文献作为第五条，标题不带自动编号
+\addcontentsline{toc}{section}{五、参考文献}% 让目录里也出现这一条
+\bibliography{bib/ref}% 参考文献（多文件版）
+\end{document}
